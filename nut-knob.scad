@@ -18,17 +18,16 @@ function nut_height(size) = nut_sizes[search([size], nut_sizes)[0]][2];
 
 //----------------------------------------------------------------------------
 
-handle_diameter = 40;
-handle_thickness = 10;
+handle_thickness = 6;
 
-//translate([handle_diameter * -1.5, 0, 0])
-//knob(handle_diameter, handle_thickness, "m5", roundover = 5);
+//translate([50, 0, 0])
+//knob(30, handle_thickness, "m5", roundover = 5);
 
 translate([0, 0, 0])
-knob(handle_diameter, handle_thickness, "m6", roundover = 5);
+knob(30, handle_thickness, "m6", roundover = 5);
 
-translate([handle_diameter * 1.5, 0, 0])
-knob(handle_diameter, handle_thickness, "m8", roundover = 5);
+translate([50, 0, 0])
+knob(40, handle_thickness, "m8", roundover = 5);
 
 //----------------------------------------------------------------------------
 
@@ -36,8 +35,8 @@ module knob(handle_diameter, handle_thickness, nut_size, roundover = 0) {
   nut_width = nut_width(nut_size);
   nut_height = nut_height(nut_size);
   shaft_width = nut_width * 2;
-  shaft_height = nut_height * 2;
-  nut_socket_depth = nut_height * 1.25;
+  shaft_height = nut_height;
+  nut_socket_depth = nut_height * 0.90;
 
   mirror([0, 0, 1])
   difference() {
